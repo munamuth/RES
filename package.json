@@ -20,6 +20,8 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "angular": "^1.7.2",
+        "animate.css": "^3.6.1",
         "tinymce": "^4.7.13"
     }
 }
