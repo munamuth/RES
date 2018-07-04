@@ -6,90 +6,100 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        <link rel="stylesheet" type="text/css" href="{{ url('/node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url('/node_modules/animate.css/animate.min.css') }}">
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
+        <style type="text/css">
+            *{
                 margin: 0;
+                padding: 0;
             }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
+            .header, .body, .footer{
+                width: 100%;
+                height: auto;
+                float: left;
                 display: flex;
-                justify-content: center;
+                background: #678;
             }
-
-            .position-ref {
+            .logo_container{
+                width: 20%;
+                padding: 15px;
+            }
+            .menu_container{
+                width: 80%;
                 position: relative;
             }
-
-            .top-right {
+            ul.main_menu{
+                list-style: none;
                 position: absolute;
-                right: 10px;
-                top: 18px;
+                bottom: 15px;
+                margin: 0;
+                right: 30px;
+            }
+            ul.main_menu li{
+                display: inline-block;
+            }
+            ul.main_menu li:first-child::before{
+                content: '';
+            }
+            ul.main_menu li:before{
+                content: '|';
+                color: #fff;
             }
 
-            .content {
-                text-align: center;
+            ul.main_menu li a{
+                color: #fff;
+                font-weight: 500;
+                font-size: 15px;
+                width: 100%;
+                padding: 15px;
             }
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
+            ul.main_menu li a:hover{
+                background: #234;
                 text-decoration: none;
-                text-transform: uppercase;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            ul.sub_menu{
+                display: none;
+                background: #123;
+                max-width: 320px;
+            }
+            ul.sub_menu li{
+                width: 100%;
+                float: left;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div class="header">
+            <div class="logo_container">
+                <div class="logo">
+                    <img src="{{ url('/node_modules/logo/logo.png') }}" class="img-fluid">
                 </div>
             </div>
+            <div class="menu_container">
+                <ul class="main_menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Category</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">News and Events</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            
+        </div>
+        <div class="footer">
+            
         </div>
     </body>
 </html>
